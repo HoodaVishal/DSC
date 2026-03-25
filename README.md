@@ -1,4 +1,4 @@
-# DSC
+# Corpus
 
 A free data science learning platform — clean, fast, and built for depth. Covers Python, Machine Learning, Deep Learning, NLP, Statistics, Visualization, and SQL.
 
@@ -23,8 +23,8 @@ A free data science learning platform — clean, fast, and built for depth. Cove
 
 Clone the repo and run locally:
 
-    git clone https://github.com/HoodaVishal/DSC.git
-    cd DSC
+    git clone https://github.com/HoodaVishal/Corpus.git
+    cd Corpus
     npm install
     npm run dev
 
