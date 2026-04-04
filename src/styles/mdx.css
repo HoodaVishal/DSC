@@ -1,0 +1,418 @@
+/* --- Wrapper --- */
+.mdx-content {
+    max-width: var(--max-width-content);
+    width: 100%;
+    color: var(--color-text-secondary);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    line-height: var(--leading-loose);
+}
+
+
+/* --- Spacing Between All Block Elements --- */
+.mdx-content > * + * {
+    margin-top: var(--space-6);
+}
+
+
+.mdx-content > h2 + *,
+.mdx-content > h3 + *,
+.mdx-content > h4 + * {
+    margin-top: var(--space-4);
+}
+
+
+/* --- Headings --- */
+.mdx-content h1,
+.mdx-content h2,
+.mdx-content h3,
+.mdx-content h4,
+.mdx-content h5,
+.mdx-content h6 {
+    font-family: var(--font-heading);
+    color: var(--color-text-primary);
+    letter-spacing: var(--tracking-tight);
+    scroll-margin-top: calc(var(--navbar-height) + var(--space-6));
+}
+
+
+.mdx-content h1 {
+    font-size: var(--text-3xl);
+    font-weight: 600;
+    line-height: var(--leading-tight);
+    margin-top: var(--space-16);
+    padding-bottom: var(--space-6);
+    border-bottom: var(--border-thin);
+}
+
+
+.mdx-content h2 {
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    line-height: var(--leading-tight);
+    margin-top: var(--space-16);
+    padding-bottom: var(--space-4);
+    border-bottom: var(--border-subtle);
+}
+
+.mdx-content h3 {
+    font-size: var(--text-xl);
+    font-weight: 500;
+    line-height: var(--leading-snug);
+    margin-top: var(--space-12);
+}
+
+
+.mdx-content h4 {
+    font-size: var(--text-lg);
+    font-weight: 500;
+    line-height: var(--leading-snug);
+    margin-top: var(--space-10);
+}
+
+
+.mdx-content h5,
+.mdx-content h6 {
+    font-size: var(--text-base);
+    font-weight: 500;
+    margin-top: var(--space-8);
+}
+
+
+/* --- Paragraphs --- */
+.mdx-content p {
+    font-size: var(--text-base);
+    line-height: var(--leading-loose);
+    color: var(--color-text-secondary);
+}
+
+
+.mdx-content p + p {
+    margin-top: var(--space-5);
+}
+
+
+/* --- Links --- */
+.mdx-content a {
+    color: var(--color-text-primary);
+    text-decoration: underline;
+    text-decoration-color: var(--color-border);
+    text-underline-offset: 3px;
+    transition: text-decoration-color var(--transition-fast), color var(--transition-fast);
+}
+
+
+.mdx-content a:hover {
+    color: var(--color-text-primary);
+    text-decoration-color: var(--color-text-secondary);
+}
+
+
+/* --- Strong & Em --- */
+.mdx-content strong {
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+
+.mdx-content em {
+    font-style: italic;
+    color: var(--color-text-secondary);
+}
+
+
+/* --- Lists --- */
+.mdx-content ul,
+.mdx-content ol {
+    padding-left: var(--space-6);
+    color: var(--color-text-secondary);
+    line-height: var(--leading-loose);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+
+.mdx-content ul {
+    list-style-type: disc;
+}
+
+
+.mdx-content ol {
+    list-style-type: decimal;
+}
+
+
+.mdx-content li {
+    font-size: var(--text-base);
+    line-height: var(--leading-loose);
+    padding-left: var(--space-2);
+}
+
+
+.mdx-content li::marker {
+    color: var(--color-text-teritary);
+}
+
+
+.mdx-content ul ul,
+.mdx-content ol ol,
+.mdx-content ul ol,
+.mdx-content ol ul {
+    margin-top: var(--space-2);
+    padding-left: var(--space-6);
+}
+
+
+/* --- Inline Code --- */
+.mdx-content :not(pre) > code {
+    font-family: var(--font-mono);
+    font-size: 0.875em;
+    font-weight: 400;
+    background-color: var(--color-surface-2);
+    color: var(--color-text-primary);
+    padding: 0.15em 0.45em;
+    border-radius: var(--radius-sm);
+    border: var(--border-subtle);
+    white-space: nowrap;
+}
+
+
+/* --- Code Blocks --- */
+.mdx-content pre {
+    position: relative;
+    background-color: var(--color-surface);
+    border: var(--border-thin);
+    border-radius: var(--radius-md);
+    padding: var(--space-6);
+    overflow-x: auto;
+    margin-top: var(--space-6);
+}
+
+
+.mdx-content pre code {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    line-height: 1.75;
+    color: var(--color-text-primary);
+    background: none;
+    border: none;
+    padding: 0;
+    white-space: pre;
+}
+
+
+/* --- Language label on code blocks --- */
+.mdx-content pre[data-language]::before {
+    content: attr(data-language);
+    position: absolute;
+    top: var(--space-3);
+    right: var(--space-4);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--color-text-teritary);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+}
+
+
+/* --- Blockquote --- */
+.mdx-content blockquote {
+    border-left: 2px solid var(--color-border);
+    padding: var(--space-4) var(--space-6);
+    margin: 0;
+    background-color: var(--color-surface);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+
+.mdx-content blockquote p {
+    color: var(--color-text-secondary);
+    font-style: italic;
+    margin: 0;
+}
+
+
+.mdx-content blockquote p + p {
+    margin-top: var(--space-3);
+}
+
+
+/* --- Horizontal Rule --- */
+.mdx-content hr {
+    border: none;
+    border-top: var(--border-thin);
+    margin: var(--space-16) 0;
+}
+
+
+/* --- Tables --- */
+.mdx-content table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--text-sm);
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    border: var(--border-thin);
+}
+
+
+.mdx-content thead {
+    background-color: var(--color-surface);
+}
+
+
+.mdx-content thead th {
+    font-family: var(--font-heading);
+    font-weight: 500;
+    font-size: var(--text-sm);
+    color: var(--color-text-primary);
+    text-align: left;
+    padding: var(--space-3) var(--space-4);
+    border-bottom: var(--border-thin);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+}
+
+
+.mdx-content tbody tr {
+    border-bottom: var(--border-subtle);
+    transition: background-color var(--transition-fast);
+}
+
+
+.mdx-content tbody tr:last-child {
+    border-bottom: none;
+}
+
+
+.mdx-content tbody tr:hover {
+    background-color: var(--color-surface);
+}
+
+
+.mdx-content tbody td {
+    padding: var(--space-3) var(--space-4);
+    color: var(--color-text-secondary);
+    vertical-align: top;
+    line-height: var(--leading-loose);
+}
+
+
+/* --- Images --- */
+.mdx-content img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+    border: var(--border-thin);
+    display: block;
+}
+
+
+.mdx-content figure {
+    margin: 0;
+}
+
+
+.mdx-content figcaption {
+    margin-top: var(--space-3);
+    font-size: var(--text-sm);
+    color: var(--color-text-teritary);
+    text-align: center;
+    font-style: italic;
+}
+
+
+/* --- Callout / Alert Boxes --- */
+/* Used as custom MDX components */
+.mdx-callout {
+    display: flex;
+    gap: var(--space-4);
+    padding: var(--space-5) var(--space-6);
+    border-radius: var(--radius-md);
+    border: var(--border-thin);
+    background-color: var(--color-surface);
+}
+
+
+.mdx-callout-icon {
+    font-size: var(--text-lg);
+    line-height: 1.6;
+    flex-shrink: 0;
+}
+
+
+.mdx-callout-body {
+    flex: 1;
+}
+
+
+.mdx-callout-body p {
+    margin: 0;
+    font-size: var(--text-sm);
+    line-height: var(--leading-normal);
+}
+
+
+.mdx-callout.info {
+    border-color: #1e3a5f;
+    background-color: #0a1628;
+}
+
+
+.mdx-callout.tip {
+    border-color: #14532d;
+    background-color: #071a0f;
+}
+
+
+.mdx-callout.warning {
+    border-color: #78350f;
+    background-color: #1c0d03;
+}
+
+
+.mdx-callout.note {
+    border-color: var(--color-border);
+    background-color: var(--color-surface);
+}
+
+
+/* --- Keyboard Tags --- */
+.mdx-callout kbd {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--color-text-secondary);
+    background-color: var(--color-surface-2);
+    border: var(--border-thin);
+    border-bottom-width: 2px;
+    border-radius: var(--radius-sm);
+    padding: 0.1em 0.5em;
+}
+
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .mdx-content {
+        font-size: var(--text-sm);
+    }
+
+
+    .mdx-content h1 {font-size: var(--text-2xl);}
+    .mdx-content h2 {font-size: var(--text-xl);}
+    .mdx-content h3 {font-size: var(--text-lg);}
+
+
+    .mdx-content pre {
+        padding: var(--space-4);
+        border-radius: var(--radius-sm);
+        font-size: var(--text-xs);
+    }
+
+
+    .mdx-content table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
